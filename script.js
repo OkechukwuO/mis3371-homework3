@@ -167,3 +167,37 @@ function validateMI() {
     }
 
 }
+
+function validateLastName() {
+
+    var lastName = document.getElementById("lname").value;
+    var error = document.getElementById("lnameError");
+
+    if (lastName == "") {
+        error.innerHTML = "Last name is required.";
+    }
+    else if (!/^[A-Za-z'-]+$/.test(lastName)) {
+        error.innerHTML = "Letters, apostrophes and dashes only.";
+    }
+    else {
+        error.innerHTML = "";
+    }
+
+}
+
+function validateCity() {
+
+    var city = document.getElementById("city").value;
+    var error = document.getElementById("cityError");
+
+    if (city == "") {
+        error.innerHTML = "City is required.";
+    }
+    else if (!/^[A-Za-z ]+$/.test(city)) {
+        error.innerHTML = "Letters only.";
+    }
+    else {
+        error.innerHTML = "";
+    }
+
+}
