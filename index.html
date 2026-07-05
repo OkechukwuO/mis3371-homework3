@@ -55,7 +55,7 @@ Description: Patient registration form for Hummingbird Medical.
         </td>
 
         <td>
-            <input type="text" id="lname" maxlength="30" placeholder="Last Name" title="Letters, apostrophes, numbers 2-5, dashes allowed" pattern="[A-Za-z0-9'-]{1,30}">
+            <input type="text" id="lname" maxlength="30" placeholder="Last Name" title="Letters, apostrophes, numbers 2-5, dashes allowed" pattern="[A-Za-z0-9'-]{1,30}" oninput="validateLastName()" onblur="validateLastName()">
 
             <span id="lnameError"></span>
         </td>
@@ -105,7 +105,7 @@ Description: Patient registration form for Hummingbird Medical.
 
     <tr>
         <td>
-            <input type="text" id="city" maxlength="30" title="2 to 30 characters required" pattern=".{2,30}">
+            <input type="text" id="city" maxlength="30" title="2 to 30 characters required" pattern=".{2,30}" oninput="validateCity()" onblur="validateCity()">
 
             <span id="cityError"></span>
         </td>
