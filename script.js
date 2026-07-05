@@ -133,3 +133,20 @@ function reviewForm() {
         "<p>User ID: " + userId + "</p>" +
         "<p>Password Status: " + (passwordError === "" ? "PASS" : passwordError) + "</p>";
 }
+
+function validateFirstName() {
+
+    var firstName = document.getElementById("fname").value;
+    var error = document.getElementById("fnameError");
+
+    if (firstName == "") {
+        error.innerHTML = "First name is required.";
+    }
+    else if (!/^[A-Za-z'-]+$/.test(firstName)) {
+        error.innerHTML = "Letters only.";
+    }
+    else {
+        error.innerHTML = "";
+    }
+
+}
