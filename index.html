@@ -44,14 +44,20 @@ Description: Patient registration form for Hummingbird Medical.
     <tr>
         <td>
             <input type="text" id="fname" maxlength="30" placeholder="First Name" title="Letters, apostrophes, and dashes only" pattern="[A-Za-z'-]{1,30}">
+            
+            <span id="fnameError"></span>
         </td>
 
         <td>
             <input type="text" id="mi" maxlength="1" placeholder="MI" title="One letter only" pattern="[A-Za-z]">
+
+            <span id="miError"></span>
         </td>
 
         <td>
             <input type="text" id="lname" maxlength="30" placeholder="Last Name" title="Letters, apostrophes, numbers 2-5, dashes allowed" pattern="[A-Za-z0-9'-]{1,30}">
+
+            <span id="lnameError"></span>
         </td>
     </tr>
 <!---Phone number--->
@@ -62,6 +68,8 @@ Description: Patient registration form for Hummingbird Medical.
     <tr>
         <td colspan="3">
             <input type="text" id="phone" maxlength="15" placeholder="(000) 000-0000" title="Format: 000-000-0000" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+
+            <span id="phoneError"></span>
         </td>
     </tr>
 <!---Address--->
@@ -72,6 +80,8 @@ Description: Patient registration form for Hummingbird Medical.
     <tr>
         <td colspan="3">
             <input type="text" id="address" maxlength="60" placeholder="Street Address" title="2 to 30 characters required" pattern=".{2,30}">
+
+            <span id="addressError"></span>
         </td>
     </tr>
 <!---Address Line 2--->
@@ -82,6 +92,8 @@ Description: Patient registration form for Hummingbird Medical.
 <tr>
     <td colspan="3">
         <input type="text" id="address2" maxlength="60" placeholder="Apt / Suite (optional)" title="Optional - 2 to 30 characters if used" pattern=".{0,30}">
+
+        <span id="address2Error"></span>
     </td>
 </tr>
 <!---City, State, Zip--->
@@ -94,6 +106,8 @@ Description: Patient registration form for Hummingbird Medical.
     <tr>
         <td>
             <input type="text" id="city" maxlength="30" title="2 to 30 characters required" pattern=".{2,30}">
+
+            <span id="cityError"></span>
         </td>
 
 <td>
@@ -152,10 +166,14 @@ Description: Patient registration form for Hummingbird Medical.
         <option value="DC">District of Columbia</option>
         <option value="PR">Puerto Rico</option>
     </select>
+
+    <span id="stateError"></span>
 </td>
 
         <td>
             <input type="text" id="zip" maxlength="10" placeholder="77002 or 77002-1234" title="5 digit or ZIP+4 format" pattern="[0-9]{5}(-[0-9]{4})?">
+
+            <span id="zipError"></span>
         </td>
     </tr>
 <!---Date of Birth, Social Security Number--->
@@ -181,6 +199,8 @@ Description: Patient registration form for Hummingbird Medical.
     <tr>
         <td colspan="3">
             <input type="email" id="email" maxlength="50" placeholder="name@example.com" title="Enter a valid email address like name@domain.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+
+            <span id="emailError"></span>
         </td>
     </tr>
 <!---Current Symptoms--->
@@ -274,6 +294,8 @@ Description: Patient registration form for Hummingbird Medical.
 <tr>
     <td colspan="3">
         <input type="text" id="userid" maxlength="20" placeholder="Enter User ID">
+
+        <span id="useridError"></span>
     </td>
 </tr>
 <!---Password--->
@@ -284,6 +306,8 @@ Description: Patient registration form for Hummingbird Medical.
 <tr>
     <td colspan="3">
         <input type="password" id="password1" maxlength="20" placeholder="Enter Password">
+
+        <span id="password1Error"></span>
     </td>
 </tr>
 <!---Reenter Password--->
@@ -294,6 +318,8 @@ Description: Patient registration form for Hummingbird Medical.
 <tr>
     <td colspan="3">
         <input type="password" id="password2" maxlength="20" placeholder="Re-enter Password">
+
+        <span id="password2Error"></span>
     </td>
 </tr>
 <!---Form buttons--->
