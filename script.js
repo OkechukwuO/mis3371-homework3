@@ -150,3 +150,20 @@ function validateFirstName() {
     }
 
 }
+
+function validateMI() {
+
+    var mi = document.getElementById("mi").value;
+    var error = document.getElementById("miError");
+
+    if (mi == "") {
+        error.innerHTML = "";
+    }
+    else if (!/^[A-Za-z]$/.test(mi)) {
+        error.innerHTML = "Enter one letter only.";
+    }
+    else {
+        error.innerHTML = "";
+    }
+
+}
