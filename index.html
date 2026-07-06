@@ -309,7 +309,7 @@ Description: Patient registration form for Hummingbird Medical.
 
 <tr>
     <td colspan="3">
-        <input type="password" id="password1" maxlength="20" placeholder="Enter Password">
+        <input type="password" id="password1" maxlength="20" placeholder="Enter Password" title="At least 8 characters with an uppercase letter, lowercase letter, and number." oninput="validatePassword()" onblur="validatePassword()">
 
         <span id="password1Error"></span>
     </td>
@@ -321,7 +321,7 @@ Description: Patient registration form for Hummingbird Medical.
 
 <tr>
     <td colspan="3">
-        <input type="password" id="password2" maxlength="20" placeholder="Re-enter Password">
+        <input type="password" id="password2" maxlength="20" placeholder="Re-enter Password" oninput="validatePasswordMatch()" onblur="validatePasswordMatch()">
 
         <span id="password2Error"></span>
     </td>
