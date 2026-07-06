@@ -255,3 +255,50 @@ function validateZip() {
 
 }
 
+function validateAddress() {
+
+    var address = document.getElementById("address").value;
+    var error = document.getElementById("addressError");
+
+    if (address == "") {
+        error.innerHTML = "Address is required.";
+    }
+    else if (address.length < 2 || address.length > 30) {
+        error.innerHTML = "Address must be 2-30 characters.";
+    }
+    else {
+        error.innerHTML = "";
+    }
+
+}
+
+function validateAddress2() {
+
+    var address2 = document.getElementById("address2").value;
+    var error = document.getElementById("address2Error");
+
+    if (address2 == "") {
+        error.innerHTML = "";
+    }
+    else if (address2.length < 2 || address2.length > 30) {
+        error.innerHTML = "Address Line 2 must be 2-30 characters.";
+    }
+    else {
+        error.innerHTML = "";
+    }
+
+}
+
+function validateState() {
+
+    var state = document.getElementById("state").value;
+    var error = document.getElementById("stateError");
+
+    if (state == "") {
+        error.innerHTML = "Please select a state.";
+    }
+    else {
+        error.innerHTML = "";
+    }
+
+}
