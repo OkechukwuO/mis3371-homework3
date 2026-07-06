@@ -378,7 +378,7 @@ function validateSSN() {
 function validateUserID() {
 
     var userId = document.getElementById("userid").value;
-    var error = document.getElementById("userIdError");
+    var error = document.getElementById("useridError");
 
     if (userId == "") {
         error.innerHTML = "User ID is required.";
