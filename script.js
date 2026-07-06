@@ -302,3 +302,75 @@ function validateState() {
     }
 
 }
+
+function validateDOB() {
+
+    var dob = document.getElementById("dob").value;
+    var error = document.getElementById("dobError");
+
+    if (dob == "") {
+        error.innerHTML = "Date of Birth is required.";
+        return;
+    }
+
+    var parts = dob.split("/");
+
+    if (parts.length != 3) {
+        error.innerHTML = "Use MM/DD/YYYY.";
+        return;
+    }
+
+    var month = parseInt(parts[0]);
+    var day = parseInt(parts[1]);
+    var year = parseInt(parts[2]);
+
+    var birthDate = new Date(year, month - 1, day);
+    var today = new Date();
+
+    if (birthDate > today) {
+        error.innerHTML = "Date cannot be in the future.";
+    }
+    else if (today.getFullYear() - year > 120) {
+        error.innerHTML = "Date cannot be more than 120 years ago.";
+    }
+    else {
+        error.innerHTML = "";
+    }
+
+}
+
+function formatSSN() {
+
+    var ssn = document.getElementById("ssn");
+
+    var numbers = ssn.value.replace(/\D/g, "");
+
+    if (numbers.length > 3 && numbers.length <= 5) {
+        numbers = numbers.slice(0,3) + "-" + numbers.slice(3);
+    }
+    else if (numbers.length > 5) {
+        numbers = numbers.slice(0,3) + "-" +
+                  numbers.slice(3,5) + "-" +
+                  numbers.slice(5,9);
+    }
+
+    ssn.value = numbers;
+
+}
+
+function validateSSN() {
+
+    var ssn = document.getElementById("ssn").value;
+    var error = document.getElementById("ssnError");
+
+    if (ssn == "") {
+        error.innerHTML = "SSN is required.";
+    }
+    else if (!/^\d{3}-\d{2}-\d{4}$/.test(ssn)) {
+        error.innerHTML = "Use format ###-##-####.";
+    }
+    else {
+        error.innerHTML = "";
+    }
+
+}
