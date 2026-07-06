@@ -67,7 +67,7 @@ Description: Patient registration form for Hummingbird Medical.
 
     <tr>
         <td colspan="3">
-            <input type="text" id="phone" maxlength="15" placeholder="(000) 000-0000" title="Format: 000-000-0000" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+            <input type="text" id="phone" maxlength="15" placeholder="(000) 000-0000" title="Format: 000-000-0000" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" oninput="validatePhone()" onblur="validatePhone()">
 
             <span id="phoneError"></span>
         </td>
@@ -171,7 +171,7 @@ Description: Patient registration form for Hummingbird Medical.
 </td>
 
         <td>
-            <input type="text" id="zip" maxlength="10" placeholder="77002 or 77002-1234" title="5 digit or ZIP+4 format" pattern="[0-9]{5}(-[0-9]{4})?">
+            <input type="text" id="zip" maxlength="10" placeholder="77002 or 77002-1234" title="5 digit or ZIP+4 format" pattern="[0-9]{5}" oninput="validateZip()" onblur="validateZip()">
 
             <span id="zipError"></span>
         </td>
@@ -198,7 +198,7 @@ Description: Patient registration form for Hummingbird Medical.
 
     <tr>
         <td colspan="3">
-            <input type="email" id="email" maxlength="50" placeholder="name@example.com" title="Enter a valid email address like name@domain.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+            <input type="email" id="email" maxlength="50" placeholder="name@example.com" title="Enter a valid email address like name@domain.com" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" oninput="validateEmail()" onblur="validateEmail()">
 
             <span id="emailError"></span>
         </td>
