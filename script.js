@@ -374,3 +374,30 @@ function validateSSN() {
     }
 
 }
+
+function validateUserID() {
+
+    var userId = document.getElementById("userid").value;
+    var error = document.getElementById("userIdError");
+
+    if (userId == "") {
+        error.innerHTML = "User ID is required.";
+    }
+
+    else if (userId.length < 5 || userId.length > 20) {
+        error.innerHTML = "User ID must be 5-20 characters.";
+    }
+
+    else if (/^[0-9]/.test(userId)) {
+        error.innerHTML = "User ID cannot start with a number.";
+    }
+
+    else if (!/^[A-Za-z0-9_-]+$/.test(userId)) {
+        error.innerHTML = "Only letters, numbers, underscores, and dashes allowed.";
+    }
+
+    else {
+        error.innerHTML = "";
+    }
+
+}
