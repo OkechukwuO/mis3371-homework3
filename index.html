@@ -297,7 +297,7 @@ Description: Patient registration form for Hummingbird Medical.
 
 <tr>
     <td colspan="3">
-        <input type="text" id="userid" maxlength="20" placeholder="Enter User ID">
+        <input type="text" id="userid" maxlength="20" placeholder="Enter User ID" title="5-20 characters. Cannot start with a number." oninput="validateUserID()" onblur="validateUserID()">
 
         <span id="useridError"></span>
     </td>
