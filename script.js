@@ -401,3 +401,59 @@ function validateUserID() {
     }
 
 }
+
+function validatePassword() {
+
+    var password = document.getElementById("password1").value;
+    var userId = document.getElementById("userid").value;
+    var error = document.getElementById("password1Error");
+
+    if (password == "") {
+        error.innerHTML = "Password is required.";
+    }
+
+    else if (password.length < 8) {
+        error.innerHTML = "Password must be at least 8 characters.";
+    }
+
+    else if (!/[A-Z]/.test(password)) {
+        error.innerHTML = "Must contain an uppercase letter.";
+    }
+
+    else if (!/[a-z]/.test(password)) {
+        error.innerHTML = "Must contain a lowercase letter.";
+    }
+
+    else if (!/[0-9]/.test(password)) {
+        error.innerHTML = "Must contain a number.";
+    }
+
+    else if (password.toLowerCase() == userId.toLowerCase()) {
+        error.innerHTML = "Password cannot match User ID.";
+    }
+
+    else {
+        error.innerHTML = "";
+    }
+
+}
+
+function validatePasswordMatch() {
+
+    var password1 = document.getElementById("password1").value;
+    var password2 = document.getElementById("password2").value;
+    var error = document.getElementById("password2Error");
+
+    if (password2 == "") {
+        error.innerHTML = "Please re-enter your password.";
+    }
+
+    else if (password1 != password2) {
+        error.innerHTML = "Passwords do not match.";
+    }
+
+    else {
+        error.innerHTML = "";
+    }
+
+}
