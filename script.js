@@ -201,3 +201,56 @@ function validateCity() {
     }
 
 }
+
+function validatePhone() {
+
+    var phone = document.getElementById("phone").value;
+    var error = document.getElementById("phoneError");
+
+    if (phone == "") {
+        error.innerHTML = "Phone number is required.";
+    }
+    else if (!/^\d{3}-\d{3}-\d{4}$/.test(phone)) {
+        error.innerHTML = "Use format 000-000-0000.";
+    }
+    else {
+        error.innerHTML = "";
+    }
+
+}
+
+function validateEmail() {
+
+    var email = document.getElementById("email").value.toLowerCase();
+    document.getElementById("email").value = email;
+
+    var error = document.getElementById("emailError");
+
+    if (email == "") {
+        error.innerHTML = "Email is required.";
+    }
+    else if (!/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(email)) {
+        error.innerHTML = "Enter a valid email address.";
+    }
+    else {
+        error.innerHTML = "";
+    }
+
+}
+
+function validateZip() {
+
+    var zip = document.getElementById("zip").value;
+    var error = document.getElementById("zipError");
+
+    if (zip == "") {
+        error.innerHTML = "ZIP Code is required.";
+    }
+    else if (!/^\d{5}$/.test(zip)) {
+        error.innerHTML = "Enter a 5-digit ZIP Code.";
+    }
+    else {
+        error.innerHTML = "";
+    }
+
+}
