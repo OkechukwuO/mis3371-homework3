@@ -457,3 +457,53 @@ function validatePasswordMatch() {
     }
 
 }
+
+function validateForm() {
+
+    validateFirstName();
+    validateMI();
+    validateLastName();
+    validatePhone();
+    validateAddress();
+    validateAddress2();
+    validateCity();
+    validateState();
+    validateZip();
+    validateDOB();
+    validateSSN();
+    validateEmail();
+    validateUserID();
+    validatePassword();
+    validatePasswordMatch();
+
+    if (
+        document.getElementById("fnameError").innerHTML == "" &&
+        document.getElementById("miError").innerHTML == "" &&
+        document.getElementById("lnameError").innerHTML == "" &&
+        document.getElementById("phoneError").innerHTML == "" &&
+        document.getElementById("addressError").innerHTML == "" &&
+        document.getElementById("address2Error").innerHTML == "" &&
+        document.getElementById("cityError").innerHTML == "" &&
+        document.getElementById("stateError").innerHTML == "" &&
+        document.getElementById("zipError").innerHTML == "" &&
+        document.getElementById("dobError").innerHTML == "" &&
+        document.getElementById("ssnError").innerHTML == "" &&
+        document.getElementById("emailError").innerHTML == "" &&
+        document.getElementById("useridError").innerHTML == "" &&
+        document.getElementById("password1Error").innerHTML == "" &&
+        document.getElementById("password2Error").innerHTML == ""
+    ) {
+
+        document.getElementById("submitButton").style.display = "inline";
+
+    }
+
+    else {
+
+        document.getElementById("submitButton").style.display = "none";
+
+        alert("Please correct the highlighted errors before submitting.");
+
+    }
+
+}
