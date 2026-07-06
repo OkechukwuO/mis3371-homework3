@@ -79,7 +79,7 @@ Description: Patient registration form for Hummingbird Medical.
 
     <tr>
         <td colspan="3">
-            <input type="text" id="address" maxlength="60" placeholder="Street Address" title="2 to 30 characters required" pattern=".{2,30}">
+            <input type="text" id="address" maxlength="60" placeholder="Street Address" title="2 to 30 characters required" pattern=".{2,30}" oninput="validateAddress()" onblur="validateAddress()">
 
             <span id="addressError"></span>
         </td>
@@ -91,7 +91,7 @@ Description: Patient registration form for Hummingbird Medical.
 
 <tr>
     <td colspan="3">
-        <input type="text" id="address2" maxlength="60" placeholder="Apt / Suite (optional)" title="Optional - 2 to 30 characters if used" pattern=".{0,30}">
+        <input type="text" id="address2" maxlength="60" placeholder="Apt / Suite (optional)" title="Optional - 2 to 30 characters if used" pattern=".{0,30}" oninput="validateAddress2()" onblur="validateAddress2()">
 
         <span id="address2Error"></span>
     </td>
@@ -111,7 +111,7 @@ Description: Patient registration form for Hummingbird Medical.
         </td>
 
 <td>
-    <select id="state">
+    <select id="state" onchange="validateState()" onblur="validateState()">
         <option value="">Select State</option>
         <option value="AL">Alabama</option>
         <option value="AK">Alaska</option>
